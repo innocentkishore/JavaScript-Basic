@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <style> table{ border-collapse: collapse;
+    height: 5px;
+    width: 5px;}
+        div{align-content: center;}
+        #title{background-color: aqua;}
+        td{
+            width: 130%;
+            text-align: center;
+        }
+        tr{
+            height: 30px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <center>
+   <table  border="2px">
+    <form  >
+        <th colspan="2"><div id="title"> Hand Cricket Game </div></th>
+        <tr>
+            <td>Player1</td>
+            <td><input type="text" id="p1" required></td>
+        </tr>
+        <tr>
+            <td>Bot</td>
+           
+            <td><input readonly id="bot"></td>
+        </tr>
+        <tr>
+            <td>Score</td>
+            <td><div id="score"></div></td>
+        </tr>
+        <tr>
+          <center>  <td colspan="2"> <button onclick="validate(event)" id="button">Play</button> <button onclick="replay()"> Replay</button></center>
+            
+        </tr>
+       <tr>
+        <td colspan="2"> <div id="total"> </div></td>
+       </tr>
+       <tr>
+        <td colspan="2"> <div id="lose"> </div></td>
+       </tr>
+       
+       
+    </form>
+   </table> 
+</center>   
+
+   <script>
+     let sum=0;
+    function validate(event){
+     event.preventDefault();
+  
+    let Player1=document.getElementById("p1").value;
+    
+
+    let bot=Math.floor(Math.random()*6+1);
+    console.log(bot)
+    sum=sum+bot;
+    document.getElementById("score").innerHTML=sum;
+    document.getElementById("bot").value=bot;
+    let f=1;
+    if(Player1==bot ){
+        if( f == 1){
+    document.getElementById("button").removeAttribute(onclick);
+
+        Flag1declaration();
+        }
+        if(f==0){
+    }
+    //     console.log("error");
+    // document.getElementById("lose").innerHTML="Your Lose!!"  ;
+  
+   // alert("Your are Lose!!!");
+    
+//     let decision=confirm("If you want to play Again?");
+//     console.log(decision);
+//    if(decision==true){
+//           location.reload();
+//           return false;      
+//    }
+//     if(decision==false){
+//         console.log("NO");
+//         document.getElementById("total").innerHTML="Total Score is "+sum;
+
+//     }
+   //location.reload();
+    }
+   
+    }
+    
+    function Flag1declaration(){
+        console.log("you loseeeee")
+    }
+
+    function replay(){
+        location.reload();
+    }
+   </script>
+</body>
