@@ -53,53 +53,26 @@
 
    <script>
      let sum=0;
+     let flag=true;
     function validate(event){
-     event.preventDefault();
-  
+        event.preventDefault();
     let Player1=document.getElementById("p1").value;
-    
-
     let bot=Math.floor(Math.random()*6+1);
-    console.log(bot)
+    
+    if(flag){
     sum=sum+bot;
     document.getElementById("score").innerHTML=sum;
     document.getElementById("bot").value=bot;
-    let f=1;
     if(Player1==bot ){
-        if( f == 1){
+        flag =false;
     document.getElementById("button").removeAttribute(onclick);
+    document.getElementById("lose").innerHTML="Your are lose!!"
+ document.getElementById("total").innerHTML="Your Total is "+sum
 
-        Flag1declaration();
-        }
-        if(f==0){
     }
-    //     console.log("error");
-    // document.getElementById("lose").innerHTML="Your Lose!!"  ;
-  
-   // alert("Your are Lose!!!");
+    }
+}
     
-//     let decision=confirm("If you want to play Again?");
-//     console.log(decision);
-//    if(decision==true){
-//           location.reload();
-//           return false;      
-//    }
-//     if(decision==false){
-//         console.log("NO");
-//         document.getElementById("total").innerHTML="Total Score is "+sum;
-
-//     }
-   //location.reload();
-    }
-   
-    }
-    
-    function Flag1declaration(){
-        console.log("you loseeeee")
-    }
-
-    function replay(){
-        location.reload();
-    }
+ 
    </script>
 </body>
